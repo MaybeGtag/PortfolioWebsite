@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <link href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69acd9190825add2b8696949/0ace52270_logo.png" rel="icon" type="image/svg+xml"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://sincere-persona-pro-folio.base44.app/manifest.json" rel="manifest"/>
+  <title>
+   Persona
+  </title>
+  <script crossorigin="" src="/assets/index-D7Vqh0Ny.js" type="module">
+  </script>
+  <link crossorigin="" href="/assets/index-mzqcTCfD.css" rel="stylesheet"/>
+  <script type="module">
+   let lastPath = "";
+function getPageNameFromPath(path) {
+  const segments = path.split("/").filter(Boolean);
+  return segments[0] || null;
+}
+function trackPageView() {
+  const path = window.location.pathname;
+  if (path === lastPath) return;
+  lastPath = path;
+  const pageName = getPageNameFromPath(path) || "home";
+  const appId = "69acd9190825add2b8696949";
+  const serverUrl = "https://base44.app" || "";
+  if (!appId) return;
+  fetch(`${serverUrl}/app-logs/${appId}/log-user-in-app/${pageName}`, {
+    method: "POST",
+  }).catch(() => {});
+}
+const originalPushState = history.pushState.bind(history);
+history.pushState = function (...args) {
+  originalPushState(...args);
+  trackPageView();
+};
+const originalReplaceState = history.replaceState.bind(history);
+history.replaceState = function (...args) {
+  originalReplaceState(...args);
+  trackPageView();
+};
+window.addEventListener("popstate", trackPageView);
+trackPageView();
+  </script>
+  <meta content="Persona" property="og:title"/>
+  <meta content="An elegant, interactive personal portfolio and digital resume designed to showcase your professional journey with sophisticated style." property="og:description"/>
+  <meta content="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/69acd9190825add2b8696949/0ace52270_logo.png?width=1200&amp;height=630&amp;resize=contain" property="og:image"/>
+  <meta content="https://sincere-persona-pro-folio.base44.app" property="og:url"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Persona" property="og:site_name"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Persona" name="twitter:title"/>
+  <meta content="An elegant, interactive personal portfolio and digital resume designed to showcase your professional journey with sophisticated style." name="twitter:description"/>
+  <meta content="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/render/image/public/base44-prod/public/69acd9190825add2b8696949/0ace52270_logo.png?width=1200&amp;height=630&amp;resize=contain" name="twitter:image"/>
+  <meta content="https://sincere-persona-pro-folio.base44.app" name="twitter:url"/>
+  <meta content="An elegant, interactive personal portfolio and digital resume designed to showcase your professional journey with sophisticated style." name="description"/>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="Persona" name="apple-mobile-web-app-title"/>
+  <link href="https://sincere-persona-pro-folio.base44.app" rel="canonical"/>
+  <script async="true" data-app-id="69acd9190825add2b8696949" data-platform-url="https://app.base44.com" src="/static/js/badge.js">
+  </script>
+ </head>
+ <body>
+  <div id="root">
+  </div>
+ </body>
+</html>
